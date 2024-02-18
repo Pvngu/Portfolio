@@ -6,6 +6,13 @@ interface Props {
 const { className } = Astro.props
 ---
 
-<h1 class=`uppercase text-[80px] font-bold font-main ${className}`>
+<h1 class=`uppercase text-[80px] font-bold font-main ${className} h1`>
     <slot/>
 </h1>
+
+<script>
+    import gsap from "gsap";
+    import SplitType from 'split-type'
+
+    const tl = gsap.timeline();
+</script>
