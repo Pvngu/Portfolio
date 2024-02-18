@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import H1 from '../components/H1.astro';
+import AboutCard from '../components/AboutCard.astro';
 ---
 
 <Layout title="Pvngu - Web Developer">
@@ -10,5 +12,11 @@ import Hero from '../components/Hero.astro';
 			<Header />
 			<Hero />
 		</section>
+		<div class="bg-black-light w-[98%] m-auto rounded-3xl h-[800px] px-[73px] py-[70px]">
+			<section>
+				<H1>About Me</H1>
+				<AboutCard />
+			</section>
+		</div>
 	</main>
 </Layout>

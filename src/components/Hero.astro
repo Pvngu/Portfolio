@@ -1,5 +1,6 @@
 ---
 import Pvngu from '../components/Pvngu.astro';
+import Clock from '../components/Clock.tsx';
 ---
 
 <div class="grid place-content-center h-full relative">
@@ -10,7 +11,7 @@ import Pvngu from '../components/Pvngu.astro';
             <p class="leading-[13px] md:leading-[20px] lg:leading-[28px] 2xl:leading-[40px]">&lt;p&gt;Fullstack developer & web designer based in mexico&lt;/p&gt;</p>
         </div>
     </div>
-    <span class="color-black bottom-2 right-0 font-hero text-xl absolute tracking-wide">BC, MX  2:16:45 PM</span>
+    <Clock client:load />
 </div>
 
 <style>
