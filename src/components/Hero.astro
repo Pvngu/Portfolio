@@ -2,7 +2,7 @@
 import Pvngu from '../components/Pvngu.astro';
 ---
 
-<div class="grid place-content-center h-full">
+<div class="grid place-content-center h-full relative">
     <div class="rotate-[-5deg] heading">
         <Pvngu />
         <div class="font-hero hero-title mt-[-25px] md:mt-[-10px] 2xl:mt-[25px]">
@@ -10,6 +10,7 @@ import Pvngu from '../components/Pvngu.astro';
             <p class="leading-[13px] md:leading-[20px] lg:leading-[28px] 2xl:leading-[40px]">&lt;p&gt;Fullstack developer & web designer based in mexico&lt;/p&gt;</p>
         </div>
     </div>
+    <span class="color-black bottom-2 right-0 font-hero text-xl absolute tracking-wide">BC, MX  2:16:45 PM</span>
 </div>
 
 <style>
@@ -30,3 +31,12 @@ import Pvngu from '../components/Pvngu.astro';
         transform: translateX(15px);
     }
 </style>
+
+<script>
+    import moment from 'moment-timezone';
+    
+    setInterval(() => {
+        const currentTime = moment().tz('America/New_York').format('MMMM Do YYYY, h:mm:ss a');
+        console.log(currentTime)
+    }, 1000)
+</script>
