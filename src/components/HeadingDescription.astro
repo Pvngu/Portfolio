@@ -1,0 +1,22 @@
+---
+import H1 from '../components/H1.astro';
+
+interface Props {
+    title: string,
+    description: string,
+    hClass?: string,
+    pClass?: string
+}
+
+const {
+    title,
+    description,
+    hClass,
+    pClass
+} = Astro.props
+---
+
+<div>
+    <H1 className={hClass}>{title}</H1>
+    <p class=`font-main font-light pt-2 w-[43%] text-justify ${pClass}`>{description}</p>
+</div>

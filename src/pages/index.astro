@@ -4,19 +4,48 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import H1 from '../components/H1.astro';
 import AboutCard from '../components/AboutCard.astro';
+import HeadingDescription from '../components/HeadingDescription.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 ---
 
 <Layout title="Pvngu - Web Developer">
 	<main>
-		<section class="mx-[72px] h-screen" id="home">
-			<Header />
-			<Hero />
-		</section>
-		<div class="bg-black-light w-[98%] m-auto rounded-3xl h-[800px] px-[73px] py-[70px]">
-			<section>
-				<H1>About Me</H1>
-				<AboutCard />
+		<div class="sticky h-auto top-0 -z-10">
+			<section class="mx-[72px] h-screen" id="home">
+				<Header />
+				<Hero />
 			</section>
 		</div>
+		<div class="bg-black-light w-[98%] m-auto rounded-3xl px-[73px] py-[70px]">
+			<section>
+				<H1 className='text-white-gray'>About Me</H1>
+				<AboutCard />
+			</section>
+			<section>
+				<H1 className='text-white-gray'>My Toolbox</H1>
+				<img height="400px" width="300px" src="/assets/cooking.gif" alt="">
+				<p class="text-white-gray text-main font-semibold text-3xl">Hold on, I'm still cooking this section</p>
+			</section>
+		</div>
+		<section class="mx-[72px] my-4 text-black-gray">
+			<HeadingDescription 
+			title='Projects',
+			description='Showcase of my “big projects” that I’ve been working on over the past 3 months using different technologies.',
+			hClass=''
+			/>
+			<article class="my-8 flex gap-x-2">
+				<ProjectCard
+				title="MyStoreSystem",
+				img='/assets/mystoresystem.png'
+				/>
+				<ProjectCard
+				title="Andrea's portfolio",
+				img='/assets/andreas_portfolio.png'
+				/>
+			</article>
+		</section>
+		<section>
+
+		</section>
 	</main>
 </Layout>
