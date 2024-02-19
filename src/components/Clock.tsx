@@ -14,7 +14,7 @@ export default function Clock() {
 
   return (
     <div className='absolute color-black bottom-2 right-0'>
-      <span className="font-hero text-2xl tracking-wide">BC, MX  {currentTime.format('HH:mm:ss A')}</span>
+      <span className="font-hero text-xl tracking-wide">BC, MX  {currentTime.format('HH:mm:ss A')}</span>
     </div>
   );
 };
