@@ -25,13 +25,20 @@
         opacity: 0.5
     })
 
-    gsap.from('.p', {
+    gsap.fromTo('.p', {
         scrollTrigger: {
             trigger: '.p',
             scrub: true,
             markers: false
         },
-        translateY: 70
+        translateY: 30
+    }, {
+        scrollTrigger: {
+            trigger: '.p',
+            scrub: true,
+            markers: false
+        },
+        translateY: -30
     })
 
     gsap.from('.img', {

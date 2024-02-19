@@ -4,15 +4,15 @@ import Clock from '../components/Clock.tsx';
 import HeroBackground from '../components/HeroBackground.astro';
 ---
 
-<div class="grid place-content-center h-full">
+<div class="grid place-content-center h-full relative">
     <div class="rotate-[-5deg] heading">
         <Pvngu />
-        <div class="font-hero hero-title mt-[-25px] md:mt-[-10px] 2xl:mt-[25px]">
-            <h2 class="max-md:leading-[30px] md:leading-[40px] xl:leading-[50px]">&lt;h2&gt;I'm Omar Sanchez&lt;/h2&gt;</h2>
-            <p class="leading-[13px] md:leading-[20px] lg:leading-[28px] 2xl:leading-[40px]">&lt;p&gt;Fullstack developer & web designer based in mexico&lt;/p&gt;</p>
+        <div class="font-hero hero-title">
+            <h2 class="leading-[100%]">&lt;h2&gt;I'm Omar Sanchez&lt;/h2&gt;</h2>
+            <p class="leading-[100%]">&lt;p&gt;Fullstack developer & web designer based in mexico&lt;/p&gt;</p>
         </div>
-        <HeroBackground />
     </div>
+    <HeroBackground />
     <Clock client:load />
 </div>
 
