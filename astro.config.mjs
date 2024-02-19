@@ -5,6 +5,6 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://pvngu.github.io/Portfolio',
-  integrations: [tailwind(), react()]
+  integrations: [tailwind(), react()],
+  site: 'https://pvngu.github.io/Portfolio'
 });
