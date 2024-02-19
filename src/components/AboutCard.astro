@@ -1,9 +1,9 @@
 <article class="flex relative items-center h-[450px]">
-    <p class="text-white-gray font-inter font-normal text-[32px] leading-10 text-justify w-9/12 z-10 p">
+    <p class="text-white-gray font-inter font-normal 2xl:text-[32px] text-[26px] text-justify w-9/12 z-10 p">
         I'm Omar Sanchez Lozada, but my friends call me pvngu. My programming journey began in 2021 during quarantine, and I've since been focused on developing a diverse range of web applications to enhance my skills.
     </p>
-    <picture class="w-[370px] overflow-hidden h-[490px] absolute rounded-3xl right-0 translate-y-[-20px] img">
-        <span class="absolute top-5 right-3 font-inter text-[#ffffff] font-semibold text-[18px] text-right">Tecnologico de Tijuana<br>2021</span>
+    <picture class="w-[30%] overflow-hidden h-[470px] absolute rounded-3xl right-0 translate-y-[-20px] img">
+        <span class="absolute top-5 right-3 font-inter text-[#ffffff] font-semibold text-[18px] text-right leading-6">Tecnologico de Tijuana<br>2021</span>
         <img class="color-black size-full object-cover" src="assets/myself.png" alt="">
     </picture>
 </article>
@@ -31,17 +31,19 @@
             scrub: true,
             markers: false
         },
-        translateY: 40
+        translateY: 70
     })
 
     gsap.from('.img', {
         scrollTrigger: {
             trigger: '.img',
-            start: 'top 50%',
+            start: 'top 95%',
+            end: 'top 20%',
+            scrub: true,
             markers: false
         },
         ease: 'power4-out',
-        scale: 0.95,
-        duration: 1.5
-    })
+        scale: 0.90,
+        opacity: .4
+    },)
 </script>

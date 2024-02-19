@@ -1,4 +1,4 @@
-<div class="flex" >
+<div class="flex overflow-hidden" >
     <svg xmlns="http://www.w3.org/2000/svg">
         <text  class="font-hero" x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" stroke="#222222" stroke-width="4" fill="#222222">P</text>
     </svg>
@@ -28,5 +28,15 @@
 </style>
 
 <script>
-    
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    gsap.from('.flex svg', {
+        translateY: 100,
+        opacity: 0,
+        stagger: 0.14,
+        ease: 'circ.out'
+    })
 </script>

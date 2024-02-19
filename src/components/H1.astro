@@ -6,7 +6,7 @@ interface Props {
 const { className } = Astro.props
 ---
 
-<h1 class=`uppercase text-[80px] font-bold font-main overflow-hidden ${className} h1`>
+<h1 class=`uppercase 2xl:text-[85px] text-[65px] font-bold font-main overflow-hidden ${className} h1`>
     <slot/>
 </h1>
 
@@ -18,7 +18,6 @@ const { className } = Astro.props
     gsap.registerPlugin(ScrollTrigger)
 
     const text = new SplitType('.h1', { types: 'chars'})
-    const titles = document.getElementsByTagName('h1');
 
     gsap.from(text.chars, {
         scrollTrigger: {
