@@ -7,6 +7,7 @@ import AboutCard from '../components/AboutCard.astro';
 import HeadingDescription from '../components/HeadingDescription.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import HeroBackground from '../components/HeroBackground.astro';
+import ScrollingLogos from '../components/ScrollingLogos.astro';
 ---
 
 <Layout title="Pvngu - Web Developer">
@@ -29,12 +30,13 @@ import HeroBackground from '../components/HeroBackground.astro';
 				<p class="text-white-gray text-main font-semibold text-3xl">Hold on, I'm still cooking this section</p>
 			</section>
 		</div>
-		<section id="projects" class="2xl:mx-[72px] mx-[40px] my-4 text-black-gray">
+		<section id="projects" class="2xl:mx-[72px] mx-[40px] my-4 text-black-gray relative">
 			<HeadingDescription 
 			title='Projects',
 			description="Showcase of my “big projects” that I've been working on over the past 3 months using different technologies.",
 			hClass=''
 			/>
+			<ScrollingLogos />
 			<article class="my-8 flex gap-x-2">
 				<ProjectCard
 				title="MyStoreSystem",
