@@ -1,7 +1,47 @@
-<div class="absolute grid whitespace-nowrap overflow-hidden place-content-center size-full opacity-30 -z-10 font-hero text-[80px] text-[#bdbdbd]">
-    <div>a passionate coder and designer with</div>
-    <div>a passionate coder and designer with</div>
-    <div>a passionate coder and designer with</div>
-    <div>a passionate coder and designer with</div>
-    <div>a passionate coder and designer with</div>
+<div class="absolute grid rotate-[-5deg] opacity-30 whitespace-nowrap overflow-hidden place-content-center size-full -z-10 font-hero text-[80px] text-[#bdbdbd]">
+    <div class="scrolling">
+        <div>a passionate coder and designer with</div>
+        <div>a passionate coder and designer with</div>
+        <div>a passionate coder and designer with</div>
+    </div>
+    <div class="scrolling">
+        <div>a passionate coder and designer with</div>
+        <div>a passionate coder and designer with</div>
+        <div>a passionate coder and designer with</div>
+    </div>
+    <div class="scrolling">
+        <div>a passionate coder and designer with</div>
+        <div>a passionate coder and designer with</div>
+        <div>a passionate coder and designer with</div>
+    </div>
+    <div class="scrolling">
+        <div>a passionate coder and designer with</div>
+        <div>a passionate coder and designer with</div>
+        <div>a passionate coder and designer with</div>
+    </div>
+    <div class="scrolling">
+        <div>a passionate coder and designer with</div>
+        <div>a passionate coder and designer with</div>
+        <div>a passionate coder and designer with</div>
+    </div>
 </div>
+
+<style>
+    .scrolling {
+        display: flex;
+        row-gap: 10px;
+    }
+
+    .scrolling div {
+        animation: LR 20s linear infinite
+    }
+
+    @keyframes LR {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
