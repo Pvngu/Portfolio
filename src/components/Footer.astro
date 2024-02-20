@@ -1,4 +1,4 @@
-<footer class="2xl:mx-[72px] lg:mx-[40px] flex flex-col border-t-[1px] border-black-gray pt-6 font-main text-black-gray">
+<footer class="2xl:mx-[72px] lg:mx-[40px] flex flex-col border-t-[1px] border-black-gray pt-6 font-main text-black-gray overflow-hidden">
     <div class="flex justify-between">
         <div class="uppercase">
             <span>Pvngu. All right reserved.</span>
@@ -24,12 +24,33 @@
         </div>
     </div>
     <div class="m-auto">
-        <span class="font-semibold whitespace-nowrap">OMAR SANCHEZ</span>
+        <div id="footerName" class="font-semibold whitespace-nowrap">OMAR SANCHEZ</div>
     </div>
 </footer>
 
 <style>
-    footer div:nth-child(2) span {
-        font-size: clamp(20px, 11vw, 200px)
+    footer div:nth-child(2) div {
+        font-size: clamp(20px, 11vw, 220px)
     }
 </style>
+
+<script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    import SplitType from 'split-type'
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    const text = new SplitType('#footerName', { types: 'chars' });
+
+    gsap.from(text.chars, {
+        scrollTrigger: {
+            trigger: '#footerName',
+            start: 'top 90%',
+            markers: false
+        },
+        translateY: 400,
+        duration: 2.3,
+        ease: "power4.out"
+    })
+</script>
