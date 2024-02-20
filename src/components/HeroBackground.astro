@@ -14,6 +14,16 @@
         <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
         <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
     </div>
+    <div class="scrolling">
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
+    </div>
+    <div class="scrolling">
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
+    </div>
 </div>
 
 <style>
@@ -44,3 +54,20 @@
         }
     }
 </style>
+
+<script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    gsap.to('#heroBackground', {
+        scrollTrigger: {
+            trigger: '#about',
+            scrub: true,
+            end: 'top 40%',
+            markers: true,
+        },
+        opacity: 0
+    })
+</script>
