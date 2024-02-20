@@ -3,8 +3,8 @@ import Pvngu from '../components/Pvngu.astro';
 import Clock from '../components/Clock.tsx';
 ---
 
-<div class="grid place-content-center h-full relative">
-    <div class="rotate-[-5deg] heading">
+<div id="hero" class="grid place-content-center h-full relative">
+    <div class="rotate-[-5deg]">
         <Pvngu />
         <div class="font-hero hero-title">
             <h2 class="leading-[100%]">&lt;h2&gt;I'm Omar Sanchez&lt;/h2&gt;</h2>
@@ -32,3 +32,22 @@ import Clock from '../components/Clock.tsx';
         transform: translateX(15px);
     }
 </style>
+
+<script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    gsap.to('#hero', {
+        scrollTrigger: {
+            trigger: '#about',
+            start: 'top 95%',
+            end: 'top',
+            scrub: true,
+            markers: true
+        },
+        opacity: 0,
+        translateY: -80
+    }) 
+</script>

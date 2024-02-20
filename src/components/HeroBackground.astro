@@ -1,39 +1,38 @@
-<div class="absolute grid rotate-[-5deg] opacity-30 whitespace-nowrap overflow-hidden place-content-center size-full -z-10 font-hero text-[80px] text-[#bdbdbd]">
+<div id="heroBackground" class="absolute grid rotate-[-5deg] opacity-30 whitespace-nowrap overflow-hidden place-content-center size-full -z-10 font-hero text-[#bdbdbd]">
     <div class="scrolling">
-        <div>a passionate coder and designer with</div>
-        <div>a passionate coder and designer with</div>
-        <div>a passionate coder and designer with</div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
     </div>
     <div class="scrolling">
-        <div>a passionate coder and designer with</div>
-        <div>a passionate coder and designer with</div>
-        <div>a passionate coder and designer with</div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
     </div>
     <div class="scrolling">
-        <div>a passionate coder and designer with</div>
-        <div>a passionate coder and designer with</div>
-        <div>a passionate coder and designer with</div>
-    </div>
-    <div class="scrolling">
-        <div>a passionate coder and designer with</div>
-        <div>a passionate coder and designer with</div>
-        <div>a passionate coder and designer with</div>
-    </div>
-    <div class="scrolling">
-        <div>a passionate coder and designer with</div>
-        <div>a passionate coder and designer with</div>
-        <div>a passionate coder and designer with</div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
+        <div>Passionate coder and designer with a keen eye for detail and a love for innovation. </div>
     </div>
 </div>
 
 <style>
+    #heroBackground{
+        div:nth-child(1) {
+            font-size: clamp(10px, 10vw, 100px);
+        }
+
+        div:nth-child() {
+            font-size: clamp(10px, 10vw, 100px);
+        }
+    }
     .scrolling {
         display: flex;
-        row-gap: 10px;
+        column-gap: 20px;
     }
 
     .scrolling div {
-        animation: LR 20s linear infinite
+        animation: LR 30s linear infinite;
     }
 
     @keyframes LR {
