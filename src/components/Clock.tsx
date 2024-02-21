@@ -13,8 +13,8 @@ export default function Clock() {
   }, []); // Empty dependency array ensures useEffect runs only once on component mount
 
   return (
-    <div className='absolute color-black bottom-2 right-0'>
-      <span style={{fontSize: 'clamp(10px, 2vw, 28px)'}} className="font-hero tracking-wide">BC, MX  {currentTime.format('HH:mm:ss A')}</span>
+    <div className='absolute color-black bottom-8 lg:bottom-9 right-0'>
+      <span style={{fontSize: 'clamp(18px, 2vw, 28px)'}} className="font-hero tracking-wide">BC, MX  {currentTime.format('HH:mm:ss A')}</span>
     </div>
   );
 };
