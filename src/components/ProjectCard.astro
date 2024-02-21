@@ -29,10 +29,13 @@ const {
     import ScrollTrigger from "gsap/ScrollTrigger";
 
     gsap.registerPlugin(ScrollTrigger)
-    
-    gsap.from('.projectImg', {
+
+    const img = document.querySelectorAll('.projectImg')
+
+    img.forEach(e => {
+        gsap.from(e, {
         scrollTrigger: {
-            trigger: '.projectImg',
+            trigger: e,
             start: 'top 95%',
             end: 'top 20%',
             scrub: true,
@@ -42,4 +45,5 @@ const {
         scale: 0.95
 
     },)
+    })
 </script>
