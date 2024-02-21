@@ -6,7 +6,7 @@ interface Props {
 const { className } = Astro.props
 ---
 
-<h1 class=`uppercase 2xl:text-[85px] text-[65px] font-bold font-main overflow-hidden ${className} h1`>
+<h1 class=`uppercase 2xl:text-[85px] text-[65px] font-bold overflow-hidden font-main ${className} h1`>
     <slot/>
 </h1>
 
@@ -17,17 +17,20 @@ const { className } = Astro.props
 
     gsap.registerPlugin(ScrollTrigger)
 
-    const text = new SplitType('.h1', { types: 'chars'})
+    const h1 = document.querySelectorAll('h1');
 
-    gsap.from(text.chars, {
+    h1.forEach(e => {
+        const text = new SplitType(e as HTMLElement, { types: 'chars' })
+        gsap.from(text.chars, {
         scrollTrigger: {
-            trigger: '.h1',
-            start: 'top 90%',
+            trigger: e,
+            start: 'top 70%',
             scrub: false,
             markers: false
         },
         translateY: 150,
-        ease: 'power4-out',
-        stagger: 0.07
+        ease: 'circ.out',
+        stagger: 0.06
     })
+    });
 </script>
