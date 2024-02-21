@@ -25,13 +25,13 @@ import SectionContent from '../components/SectionContent.astro';
 				<H1 className='text-white-gray'>About Me</H1>
 				<AboutCard />
 			</section>
-			<section>
+			<section class="h-[600px]">
 				<H1 className='text-white-gray'>My Toolbox</H1>
 				<img height="400px" width="300px" src="/assets/cooking.gif" alt="">
 				<p class="text-white-gray text-main font-semibold text-3xl">Hold on, I'm still cooking this section</p>
 			</section>
 		</div>
-		<SectionContent id='projects'>
+		<SectionContent id='projects' className='text-black-gray'>
 			<HeadingDescription 
 			title='Projects',
 			description="Showcase of my “big projects” that I've been working on over the past 3 months using different technologies."
