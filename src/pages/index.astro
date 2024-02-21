@@ -8,16 +8,17 @@ import HeadingDescription from '../components/HeadingDescription.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import HeroBackground from '../components/HeroBackground.astro';
 import ScrollingLogos from '../components/ScrollingLogos.astro';
+import SectionContent from '../components/SectionContent.astro';
 ---
 
 <Layout title="Pvngu - Web Developer">
 	<main>
 		<div class="sticky h-auto top-0 overflow-hidden">
 			<HeroBackground />
-			<section id="home" class="2xl:mx-[72px] lg:mx-[40px] mx-[20px] h-screen">
+			<SectionContent id='home' className='h-screen'>
 				<Header />
 				<Hero />
-			</section>
+			</SectionContent>
 		</div>
 		<div class="bg-black-light w-[97.5%] m-auto rounded-3xl 2xl:px-[73px] px-[60px] 2xl:py-[70px] py-[40px] z-10 relative">
 			<section id="about">
@@ -30,14 +31,13 @@ import ScrollingLogos from '../components/ScrollingLogos.astro';
 				<p class="text-white-gray text-main font-semibold text-3xl">Hold on, I'm still cooking this section</p>
 			</section>
 		</div>
-		<section id="projects" class="2xl:mx-[72px] mx-[40px] my-4 text-black-gray relative">
+		<SectionContent id='projects'>
 			<HeadingDescription 
 			title='Projects',
-			description="Showcase of my “big projects” that I've been working on over the past 3 months using different technologies.",
-			hClass=''
+			description="Showcase of my “big projects” that I've been working on over the past 3 months using different technologies."
 			/>
 			<ScrollingLogos />
-			<article class="my-8 flex gap-x-2">
+			<article class="my-8 flex gap-x-2 max-md:flex-col">
 				<ProjectCard
 				title="MyStoreSystem",
 				img='assets/mystoresystem.png'
@@ -47,9 +47,6 @@ import ScrollingLogos from '../components/ScrollingLogos.astro';
 				img='assets/tres4tos.png'
 				/>
 			</article>
-		</section>
-		<section>
-
-		</section>
+		</SectionContent>
 	</main>
 </Layout>
