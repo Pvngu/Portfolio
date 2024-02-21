@@ -6,9 +6,15 @@ interface Props {
 const { className } = Astro.props
 ---
 
-<h1 class=`uppercase 2xl:text-[85px] lg:text-[65px] md:text-[45px] text-[30px] font-bold overflow-hidden font-main ${className} h1`>
+<h1 class=`uppercase font-bold overflow-hidden font-main ${className} h1`>
     <slot/>
 </h1>
+
+<style>
+    h1 {
+        font-size: clamp(40px, 5.25vw, 140px);
+    }
+</style>
 
 <script>
     import gsap from "gsap";
