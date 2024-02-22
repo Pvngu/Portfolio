@@ -10,8 +10,8 @@ const {
 } = Astro.props
 ---
 <article class="flex flex-col w-full relative">
-    <picture class="bg-red-500 rounded-3xl w-full h-auto overflow-hidden projectImg">
-        <img class="object-cover size-full" src={img} alt=`image of ${title}`>
+    <picture class="rounded-3xl w-full h-auto overflow-hidden projectImg">
+        <img class="object-cover size-full hover:scale-105 transition-all" src={img} alt=`image of ${title}`>
     </picture>
     <div>
         <div id="projectBottom" class="font-inter font-light text-2xl py-3">{title}</div>
@@ -20,7 +20,7 @@ const {
 
 <style>
     picture {
-        height: clamp(500px, 33vw, 700px);
+        height: clamp(500px, 31vw, 700px);
     }
 
     #projectBottom {
