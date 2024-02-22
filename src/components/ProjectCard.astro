@@ -10,8 +10,8 @@ const {
 } = Astro.props
 ---
 <article class="flex flex-col w-full relative">
-    <picture class="bg-red-500 rounded-3xl w-full overflow-hidden projectImg">
-        <img class="color-fd object-cover size-full" src={img} alt=`image of ${title}`>
+    <picture class="bg-red-500 rounded-3xl w-full h-auto overflow-hidden projectImg">
+        <img class="object-cover size-full" src={img} alt=`image of ${title}`>
     </picture>
     <div>
         <div class="font-inter font-light text-2xl py-3">{title}</div>
@@ -19,8 +19,11 @@ const {
 </article>
 
 <style>
+    @media (min-width: ) {
+        
+    }
     picture {
-        height: clamp(300px, 30vw, 600px);
+        height: clamp(500px, 33vw, 600px);
     }
 </style>
 
