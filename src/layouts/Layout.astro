@@ -1,5 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
+import NavbarMobile from '../components/NavbarMobile.astro';
+import Header from '../components/Header.astro';
 
 interface Props {
 	title: string;
@@ -27,6 +29,8 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-cream-white">
+		<NavbarMobile/>
+		<Header />
 		<slot />
 		<Footer />
 	</body>

@@ -1,0 +1,35 @@
+<nav id="navbarMobile" class="lg:hidden h-svh w-screen bg-cream-white text-[3.2rem] uppercase font-main font-bold fixed z-40 text-black-gray">
+    <ul class="flex flex-col justify-center h-full items-center">
+        <li>
+            <a href="#home">
+                Home
+            </a>
+        </li>
+        <li>
+            <a href="#about">
+                About
+            </a>
+        </li>
+        <li>
+            <a href="#projects">
+                Projects
+            </a>
+        </li>
+        <li>
+            <a href="#contact">
+                Contact
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<style>
+    #navbarMobile {
+        transition: transform 0.6s ease;
+        transform: translateX(-100%);
+    }
+
+    #navbarMobile.active {
+        transform: translateX(0);
+    }
+</style>

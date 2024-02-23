@@ -1,17 +1,21 @@
-<header class="absolute z-10 w-full">
-    <nav class="flex items-center justify-between my-4 border-[1px] rounded-3xl border-black-gray border-opacity-30 px-20 backdrop-blur text-xl">
+---
+import Hamburger from '../components/Hamburger.astro';
+---
+<header class="md:absolute fixed z-50 w-full 2xl:px-[73px] xl:px-[60px] md:px-[45px] px-[20px]">
+    <nav class="flex items-center justify-between my-4 rounded-3xl md:border-[1px] border-black-gray border-opacity-20 md:px-20 md:backdrop-blur text-xl">
         <a href="/" class="size-[50px]">
             <img src="assets/logos/Pingu-logo.png" alt="logo">
         </a>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a class="max-md:hidden" href="#home">Home</a>
+        <a class="max-md:hidden" href="#about">About</a>
+        <a class="max-md:hidden" href="#projects">Projects</a>
+        <a class="max-md:hidden" href="#contact">Contact</a>
+        <Hamburger/>
     </nav>
 </header>
 
 <style>
-ul {
-    font-size: clamp(18px, 1.8vw, 28px);
-}
+    ul {
+        font-size: clamp(18px, 1.8vw, 28px);
+    }
 </style>
