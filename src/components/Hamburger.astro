@@ -76,18 +76,18 @@
 </style>
 
 <script>
-    const checkbox = document.getElementById('checkbox')
+    const checkbox = document.getElementById('checkbox') as HTMLInputElement;
     const navbar = document.getElementById('navbarMobile')
     const navbarLink = document.querySelectorAll('#navbarMobile ul li a')
 
     checkbox.addEventListener('change', () => {
-        if(checkbox.checked) navbar.classList.add('active')
-        else navbar.classList.remove('active')
+        if(checkbox.checked) navbar?.classList.add('active')
+        else navbar?.classList.remove('active')
     })
 
     navbarLink.forEach(link => {
         link.addEventListener('click', () => {
-            navbar.classList.remove('active')
+            navbar?.classList.remove('active')
             checkbox.checked = false
         })
     })
