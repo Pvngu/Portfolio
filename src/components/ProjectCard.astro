@@ -1,24 +1,39 @@
 ---
-interface Props {
-    img?: string,
-    title: string
-}
 
-const {
-    img,
-    title
-} = Astro.props
+const projects = [
+    {
+        title: 'MyStoreSystem',
+        img: 'assets/mystoresystem.png',
+        tags: ['Development', 'Design', '3 months ago']
+    },
+    {
+        title: "Andrea's portfolio",
+        img: 'assets/tres4tos.png',
+        tags: ['Development', 'Design', '1 month ago']
+    }
+]
 ---
-<article class="flex flex-col w-full relative">
-    <picture class="rounded-3xl w-full h-auto overflow-hidden projectImg">
-        <img class="object-cover size-full hover:scale-105 transition-all" src={img} alt=`image of ${title}`>
-    </picture>
-    <div>
-        <a href="/project">
-            <div id="projectBottom" class="font-inter font-light text-2xl md:pt-2">{title}</div>
-        </a>
-    </div>
-</article>
+{
+    projects.map((item) => (
+        <article class="flex flex-col w-full relative">
+            <picture class="rounded-3xl w-full h-auto overflow-hidden projectImg">
+                <img class="object-cover size-full hover:scale-105 duration-1000" src={item.img} alt=`image of ${item.title}`>
+            </picture>
+            <div class="flex justify-between items-center md:pt-2 px-2">
+                <a id="projectBottom" class="font-inter font-light text-2xl" href="/project">
+                    {item.title}
+                </a>
+                <div id="tags" class="uppercase flex gap-x-2">
+                    {
+                        item.tags?.map(tag => (
+                            <span>{tag}</span>
+                        ))
+                    }
+                </div>
+            </div>
+        </article>
+    ))
+}
 
 <style>
     picture {
@@ -27,6 +42,10 @@ const {
 
     #projectBottom {
         font-size: clamp(20px, 1.4vw, 40px);
+    }
+
+    #tags {
+        font-size: clamp(10px, 1vw, 16px);
     }
 </style>
 
