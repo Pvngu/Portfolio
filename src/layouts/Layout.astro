@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro';
 import NavbarMobile from '../components/NavbarMobile.astro';
+import Navbar from '../components/Navbar.astro';
 import Header from '../components/Header.astro';
 
 interface Props {
@@ -30,6 +31,7 @@ const { title } = Astro.props;
 	</head>
 	<body class="bg-cream-white">
 		<NavbarMobile/>
+		<Navbar/>
 		<Header />
 		<slot />
 		<Footer />

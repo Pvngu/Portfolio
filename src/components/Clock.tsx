@@ -7,13 +7,13 @@ export default function Clock() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(moment());
-    }, 1000); // Update time every second
+    }, 1000);
 
     return () => clearInterval(interval);
-  }, []); // Empty dependency array ensures useEffect runs only once on component mount
+  }, []);
 
   return (
-    <div className='absolute color-black bottom-8 lg:bottom-9 right-0'>
+    <div className='absolute text-black-gray bottom-8 lg:bottom-9 right-0 opacity-90'>
       <span style={{fontSize: 'clamp(18px, 2vw, 40px)'}} className="font-hero tracking-wide">BC, MX  {currentTime.format('HH:mm:ss A')}</span>
     </div>
   );
