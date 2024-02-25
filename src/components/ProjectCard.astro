@@ -1,23 +1,44 @@
 ---
-
 const projects = [
     {
         title: 'MyStoreSystem',
+        description: 'This project is an advanced inventory management system developed with Laravel, providing comprehensive tools for businesses to meticulously handle inventory and client information, optimizing control and efficiency.',
         img: 'assets/mystoresystem.png',
-        tags: ['Development', 'Design', '3 months ago']
+        tags: ['Development', 'Design', '3 months ago'],
+        tech: ['html5', 'css3', 'javascript', 'php'],
+        fw: 'laravel'
     },
     {
         title: "Andrea's portfolio",
         img: 'assets/tres4tos.png',
-        tags: ['Development', 'Design', '1 month ago']
+        tags: ['Development', 'Design', '1 month ago'],
+        fw: 'astro'
     }
 ]
 ---
 {
     projects.map((item) => (
         <article class="flex flex-col w-full relative">
-            <picture class="rounded-3xl w-full h-auto overflow-hidden projectImg">
-                <img class="object-cover size-full hover:scale-105 duration-1000" src={item.img} alt=`image of ${item.title}`>
+            <picture class="rounded-3xl w-full h-auto overflow-hidden duration-700 relative projectPicture">
+                <div class="absolute z-20 font-main px-4 py-4 text-cream-white opacity-0">
+                    <h1 class="text-[4rem] font-semibold">{item.title}</h1>
+                    <p class="w-9/12 text-justify">{item.description}</p>
+                    <h2 class="text-[2rem] font-semibold pt-4">Used technologies</h2>
+                    <div class="text-[5rem]">
+                        {
+                            item.tech?.map(tech => (
+                            <i class=`bx bxl-${tech}`></i>
+                            ))
+                        }
+                    </div>
+                    <div class="absolute right-4 top-8 w-2/12">
+                        <img src=`/assets/logos/${item.fw}-logo.svg`>
+                    </div>
+                    <div class="bottom-0 right-0">
+                        <button>Preview</button>
+                    </div>
+                </div>
+                <img class="object-cover size-full projectImg" src={item.img} alt=`image of ${item.title}`>
             </picture>
             <div class="flex justify-between items-center md:pt-2 px-2">
                 <a id="projectBottom" class="font-inter font-light text-2xl" href="/project">
@@ -45,7 +66,31 @@ const projects = [
     }
 
     #tags {
-        font-size: clamp(10px, 1vw, 16px);
+        font-size: clamp(9px, 1vw, 16px);
+    }
+
+    .projectPicture .projectImg, .projectPicture div {
+        transition: all 1s ease;
+    }
+
+    .projectPicture:hover .projectImg{
+        filter: blur(2px);
+    }
+
+    .projectPicture:hover div{
+        opacity: 1;
+    }
+
+    .projectPicture h1 {
+        font-size: clamp(30px, 3.5vw, 64px);
+    }
+
+    .projectPicture p {
+        font-size: clamp(10px, 1vw, 18px);
+    }
+
+    .projectPicture h2 {
+        font-size: clamp(20px, 2.5vw, 38px);
     }
 </style>
 

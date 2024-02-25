@@ -11,7 +11,7 @@ const { className } = Astro.props
 </h1>
 
 <style>
-    h1 {
+    .h1 {
         font-size: clamp(40px, 5.25vw, 140px);
     }
 </style>
@@ -23,7 +23,7 @@ const { className } = Astro.props
 
     gsap.registerPlugin(ScrollTrigger)
 
-    const h1 = document.querySelectorAll('h1');
+    const h1 = document.querySelectorAll('.h1');
 
     h1.forEach(e => {
         const text = new SplitType(e as HTMLElement, { types: 'chars' })
