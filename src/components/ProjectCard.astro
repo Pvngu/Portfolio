@@ -21,8 +21,8 @@ const projects = [
     projects.map((item) => (
         <article class="flex flex-col w-full relative">
             <picture class="rounded-3xl w-full h-auto overflow-hidden duration-700 relative projectPicture">
-                <div class="absolute flex items-center gap-x-2 z-30 bottom-4 left-4 text-4xl rounded-lg backdrop-blur-[2px] bg-white/10">
-                    <img class="w-7 inline-block top-0" src=`/assets/logos/${item.fw}` alt="">
+                <div class="absolute flex items-center gap-x-2 z-30 bottom-4 left-4 rounded-lg backdrop-blur-[2px] bg-white/10 tech">
+                    <img class="inline-block" src=`/assets/logos/${item.fw}`>
                     {
                         item.tech?.map(t => (
                             <i class=`bx bxl-${t}`></i>
@@ -59,6 +59,14 @@ const projects = [
 
     #tags {
         font-size: clamp(9px, 1vw, 16px);
+    }
+
+    .tech i{
+        font-size: clamp(12px, 4vw, 60px);;
+    }
+
+    .tech img{
+        width: clamp(12px, 4vw, 45px);
     }
 </style>
 
