@@ -18,10 +18,10 @@ const {
 
 <div>
     <H1 className={hClass}>{title}</H1>
-    <p class=`font-main font-light text-xl pt-2 md:w-[48%] text-justify ${pClass}`>{description}</p>
+    <p class=`font-main font-light pt-2 md:w-[48%] text-justify ${pClass}`>{description}</p>
 </div>
 
-<style>
+<style is:global>
     p {
         font-size: clamp(14px, 1.1vw, 27px);
         line-height: m-auto;

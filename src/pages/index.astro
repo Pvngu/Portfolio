@@ -1,10 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import Header from '../components/Header.astro';
 import H1 from '../components/H1.astro';
 import AboutCard from '../components/AboutCard.astro';
 import HeadingDescription from '../components/HeadingDescription.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import Project from '../components/Project.astro';
 import HeroBackground from '../components/HeroBackground.astro';
 import ScrollingLogos from '../components/ScrollingLogos.astro';
 import SectionContent from '../components/SectionContent.astro';
@@ -37,9 +38,7 @@ import Intro from '../components/Intro.astro';
 			description="Showcase of my “big projects” that I've been working on over the past 3 months using different technologies."
 			/>
 			<ScrollingLogos />
-			<article class="my-8 flex gap-x-3 2xl:gap-x-5 gap-y-4 max-lg:flex-col">
-				<ProjectCard />
-			</article>
+			<Project />
 		</SectionContent>
 	</main>
 </Layout>

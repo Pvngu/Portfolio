@@ -1,51 +1,44 @@
 ---
-const projects = [
-    {
-        title: 'MyStoreSystem',
-        img: 'assets/mystoresystem.png',
-        tags: ['Development', 'Design', '3 months ago'],
-        tech: ['html5', 'css3', 'javascript', 'php'],
-        fw: 'laravel-logo.svg'
-    },
-    {
-        title: "Andrea's portfolio",
-        img: 'assets/tres4tos.png',
-        tags: ['Development', 'Design', '1 month ago'],
-        tech: ['html5', 'tailwind-css', 'typescript'],
-        fw: 'astro-logo.svg'
-    }
-]
----
-{
-    projects.map((item) => (
-        <article class="flex flex-col w-full relative">
-            <picture class="rounded-3xl w-full h-auto overflow-hidden relative projectPicture">
-                <div class="absolute flex items-center gap-x-2 z-30 bottom-4 left-4 rounded-lg backdrop-blur-[2px] bg-white/10 tech">
-                    <img class="inline-block max-h-9" src=`/assets/logos/${item.fw}`>
-                    {
-                        item.tech?.map(t => (
-                            <i class=`bx bxl-${t}`></i>
-                        ))
-                    }
-                </div>
-                <img class="object-cover size-full projectImg" src={item.img} alt=`image of ${item.title}`>
-            </picture>
-            <div class="flex justify-between items-center md:pt-2 px-2 text-black-gray">
-                <a id="projectBottom" class="font-inter font-light text-2xl" href="/project">
-                    {item.title}
-                    <i class='bx bx-arrow-back rotate-[130deg] ml-1'></i>
-                </a>
-                <div id="tags" class="uppercase flex gap-x-2">
-                    {
-                        item.tags?.map(tag => (
-                            <span>{tag}</span>
-                        ))
-                    }
-                </div>
-            </div>
-        </article>
-    ))
+import { type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+type Props = {
+    project: CollectionEntry<'projects'>;
 }
+const { project } = Astro.props;
+---
+
+<article class="flex flex-col w-full relative">
+    <picture class="rounded-3xl w-full h-auto overflow-hidden relative projectPicture">
+        <div class="absolute flex items-center gap-x-2 z-30 bottom-4 left-4 rounded-lg backdrop-blur-[2px] bg-white/10 tech">
+            <img class="inline-block max-h-9" src=`/assets/logos/${project.data.fw}`>
+            {
+                project.data.tech?.map(t => (
+                    <i class=`bx bxl-${t}`></i>
+                ))
+            }
+        </div>
+        <Image 
+            src={project.data.image} 
+            alt={project.data.title}
+            class="object-cover size-full projectImg"
+        />
+    </picture>
+    <div class="flex justify-between items-center md:pt-2 px-2 text-black-gray">
+        <a id="projectBottom" class="font-inter font-light text-2xl" href=`/projects/${project.slug}`>
+            {project.data.title}
+            <i class='bx bx-arrow-back rotate-[130deg] ml-1'></i>
+        </a>
+        <div id="tags" class="uppercase flex gap-x-2">
+            {
+                project.data.tags?.map(tag => (
+                    <span>{tag}</span>
+                ))
+            }
+        </div>
+    </div>
+</article>
+
 
 <style>
     picture {

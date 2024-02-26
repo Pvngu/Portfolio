@@ -1,0 +1,80 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import SectionContent from '../../components/SectionContent.astro';
+import Intro from '../../components/Intro.astro';
+
+export const getStaticPaths = async () => {
+    const projects = await getCollection('projects');
+    const paths = projects.map(project => {
+        return {
+            params: {
+                slug: project.slug
+            },
+            props: {
+                project
+            }
+        }
+    })
+    return paths;
+}
+
+type Props = {
+    project: CollectionEntry<'projects'>
+}
+
+const {project} = Astro.props;
+const {Content} = await project.render();
+---
+
+<Layout title='Pvngu | MyStoreSystem'>
+    <Intro />
+    <main class="pt-20">
+        <SectionContent>
+            <div class="mb-4">
+                <h1 class='font-main font-bold uppercase text-[4rem] text-black-gray'>{project.data.title}</h1>
+            </div>
+            <div class="flex justify-between mb-6 text-black-gray">
+                <div class="w-6/12">
+                    <p>{project.data.description}</p>
+                </div>
+                <div class="flex gap-x-6">
+                    <div>
+                        <div class="font-semibold">Date:</div>
+                        <div>Dec 13, 2023</div>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Technologies:</div>
+                        <div class="tech">
+                            {
+                                project.data.tech?.map(t => (
+                                    <i class=`bx bxl-${t}`></i>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="markdown">
+                <Content />
+            </div>
+        </SectionContent>
+    </main>
+</Layout>
+
+<style>
+    h1 {
+        font-size: clamp(40px, 5vw, 70px)
+    }
+
+    .tech i{
+        font-size: clamp(25px, 4vw, 40px);;
+    }
+</style>
+
+<style is:global>
+    .markdown p img {
+        border-radius: 1.5rem;
+        margin-bottom: 2rem;
+    }
+</style>
