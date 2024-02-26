@@ -29,13 +29,13 @@ const {Content} = await project.render();
 
 <Layout title='Pvngu | MyStoreSystem'>
     <Intro />
-    <main class="pt-20">
-        <SectionContent>
+    <main class="pt-24">
+        <section class="mx-44">
             <div class="mb-4">
                 <h1 class='font-main font-bold uppercase text-[4rem] text-black-gray'>{project.data.title}</h1>
             </div>
             <div class="flex justify-between mb-6 text-black-gray">
-                <div class="w-6/12">
+                <div class="w-7/12">
                     <p>{project.data.description}</p>
                 </div>
                 <div class="flex gap-x-6">
@@ -58,7 +58,7 @@ const {Content} = await project.render();
             <div class="markdown">
                 <Content />
             </div>
-        </SectionContent>
+        </section>
     </main>
 </Layout>
 
@@ -75,6 +75,13 @@ const {Content} = await project.render();
 <style is:global>
     .markdown p img {
         border-radius: 1.5rem;
-        margin-bottom: 2rem;
+        margin-block: 2rem;
+    }
+
+    .markdown h2 {
+        font-size: clamp(10px, 3vw, 40px);
+        font-family: Poppins, sans-serif;
+        font-weight: 600;
+        text-align: center;
     }
 </style>
