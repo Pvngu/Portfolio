@@ -9,7 +9,7 @@ const projectsCollection = defineCollection({
         tags: z.array(z.string()),
         tech: z.array(z.string()),
         fw: z.string(),
-        previewLink: z.string()
+        previewLink: z.string().optional()
     }),
 });
 

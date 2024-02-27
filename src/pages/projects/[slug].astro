@@ -32,7 +32,7 @@ const {Content} = await project.render();
     <main class="pt-20">
         <section class="px-[10%] max-md:px-4">
             <div class="mb-4">
-                <h1 class='font-main font-bold uppercase text-[4rem] text-black-gray'>{project.data.title}</h1>
+                <h1 class='font-main font-bold uppercase text-black-gray'>{project.data.title}</h1>
             </div>
             <div class="flex justify-between mb-6 text-black-gray">
                 <div class="w-7/12">
@@ -56,7 +56,13 @@ const {Content} = await project.render();
                         </div>
                     </div>
                     <div class="flex flex-row-reverse">
-                        <Button link={project.data.previewLink} />
+                        {
+                            ()=> {
+                                if(project.data.previewLink) {
+                                    console.log('Hello')
+                                }
+                            }
+                        }
                     </div>
                 </div>
             </div>
@@ -69,11 +75,11 @@ const {Content} = await project.render();
 
 <style>
     h1 {
-        font-size: clamp(40px, 5vw, 70px)
+        font-size: clamp(40px, 5vw, 70px);
     }
 
     .tech i{
-        font-size: clamp(25px, 2.7vw, 50px);;
+        font-size: clamp(25px, 2.7vw, 50px);
     }
 </style>
 
@@ -85,8 +91,9 @@ const {Content} = await project.render();
     }
 
     .markdown h2 {
-        font-size: clamp(10px, 3vw, 40px);
+        font-size: clamp(22px, 3vw, 40px);
         font-family: Poppins, sans-serif;
+        padding-block: 1.3rem;
         font-weight: 600;
         text-align: center;
     }
