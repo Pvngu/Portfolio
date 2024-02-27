@@ -1,0 +1,49 @@
+---
+interface Props {
+    link: string
+}
+
+const { link } = Astro.props;
+---
+
+<a class="btn" target="_blank" href={link}>
+    View Project
+</a>
+
+<style>
+    .btn {
+    color: #222222;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid #222222;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-weight: bold;
+    background: transparent;
+    position: relative;
+    transition: all 1s;
+    overflow: hidden;
+    cursor: pointer;
+    }
+
+    .btn:hover {
+    color: white;
+    }
+
+    .btn::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    top: 0;
+    left: -40px;
+    transform: skewX(45deg);
+    background-color: #222222;
+    z-index: -1;
+    transition: all 1s;
+    }
+
+    .btn:hover::before {
+    width: 160%;
+    }
+</style>
