@@ -32,14 +32,14 @@ const {Content} = await project.render();
     <main class="pt-20">
         <section class="px-[10%] max-md:px-4">
             <div class="mb-4">
-                <h1 class='font-main font-bold uppercase text-black-gray'>{project.data.title}</h1>
+                <h1 class='font-main font-bold text-center uppercase text-black-gray'>{project.data.title}</h1>
             </div>
             <div class="flex justify-between mb-6 text-black-gray">
                 <div class="w-7/12">
-                    <p>{project.data.description}</p>
+                    <p class="text-justify">{project.data.description}</p>
                 </div>
-                <div class="flex flex-col gap-y-4">
-                    <div class="flex gap-x-6">
+                <div class="flex flex-col gap-y-6">
+                    <div class="flex gap-x-6 justify-end">
                         <div>
                             <div class="font-semibold">Date:</div>
                             <div>{project.data.date}</div>
@@ -55,13 +55,20 @@ const {Content} = await project.render();
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-row-reverse">
+                    <div class="flex gap-x-4 justify-end">
                         {
-                            ()=> {
-                                if(project.data.previewLink) {
-                                    console.log('Hello')
-                                }
-                            }
+                            project.data.previewLink && (
+                                <Button link={project.data.previewLink} invertColor={true}>
+                                    <i class='bx bx-show text-3xl'></i>View Project
+                                </Button>
+                            )
+                        }
+                        {
+                            project.data.sourceLink && (
+                                <Button link={project.data.sourceLink}>
+                                    <i class='bx bxl-github text-3xl' ></i> View Source Code
+                                </Button>
+                            )
                         }
                     </div>
                 </div>
