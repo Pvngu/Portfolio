@@ -31,45 +31,49 @@ const {Content} = await project.render();
     <Intro />
     <main class="pt-20">
         <section class="px-[10%] max-md:px-4">
-            <div class="mb-5">
-                <h1 class='font-main font-bold uppercase text-black-gray'>{project.data.title}</h1>
-            </div>
-            <div class="flex justify-between mb-6 text-black-gray">
-                <div class="w-7/12">
-                    <p class="text-justify">{project.data.description}</p>
+            <div class="flex justify-between mb-8">
+                <div class="flex flex-col max-w-[60%]">
+                    <div class="mb-5">
+                        <h1 class='font-main font-bold uppercase text-black-gray whitespace-nowrap'>{project.data.title}</h1>
+                    </div>
+                    <div>
+                        <p class="text-justify">{project.data.description}</p>
+                    </div>
                 </div>
-                <div class="flex flex-col gap-y-6">
-                    <div id="right-items" class="flex gap-x-6 justify-end">
-                        <div>
-                            <div class="font-semibold">Date:</div>
-                            <div>{project.data.date}</div>
-                        </div>
-                        <div>
-                            <div class="font-semibold">Technologies:</div>
-                            <div class="tech">
-                                {
-                                    project.data.tech?.map(t => (
-                                        <i class=`bx bxl-${t}`></i>
-                                    ))
-                                }
+                <div class="flex justify-between text-black-gray">
+                    <div class="flex flex-col justify-end gap-y-6">
+                        <div id="right-items" class="flex gap-x-6 justify-end">
+                            <div>
+                                <div class="font-bold">Date:</div>
+                                <div>{project.data.date}</div>
+                            </div>
+                            <div>
+                                <div class="font-semibold">Technologies:</div>
+                                <div class="tech">
+                                    {
+                                        project.data.tech?.map(t => (
+                                            <i class=`bx bxl-${t}`></i>
+                                        ))
+                                    }
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="flex gap-x-4 justify-end">
-                        {
-                            project.data.previewLink && (
-                                <Button link={project.data.previewLink} invertColor={true}>
-                                    <i class='bx bx-show text-3xl'></i>View Project
-                                </Button>
-                            )
-                        }
-                        {
-                            project.data.sourceLink && (
-                                <Button link={project.data.sourceLink}>
-                                    <i class='bx bxl-github text-3xl' ></i> View Source Code
-                                </Button>
-                            )
-                        }
+                        <div class="flex gap-x-4 justify-end">
+                            {
+                                project.data.previewLink && (
+                                    <Button link={project.data.previewLink} invertColor={true}>
+                                        <i class='bx bx-show text-3xl'></i>View Project
+                                    </Button>
+                                )
+                            }
+                            {
+                                project.data.sourceLink && (
+                                    <Button link={project.data.sourceLink}>
+                                        <i class='bx bxl-github' ></i> View Source Code
+                                    </Button>
+                                )
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,5 +108,9 @@ const {Content} = await project.render();
         font-weight: 700;
         text-align: center;
         color: #222222;
+    }
+
+    .bx {
+        font-size: clamp(10px, 2.6vw, 40px);
     }
 </style>
