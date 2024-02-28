@@ -1,53 +1,42 @@
-<div class="text-3xl absolute top-0 right-0 w-[30%] translate-y-4 h-[12%] overflow-hidden whitespace-nowrap max-md:hidden">
-    <div id="logos" class="flex gap-x-5 size-full w-[2000px]">
+---
+import Angular from '../icons/Angular.astro';
+import Laravel from '../icons/Laravel.astro';
+import AstroSvg from '../icons/Astro.astro';
+---
+<div class="text-3xl absolute top-0 right-0 lg:w-[30%] w-[40%] translate-y-4 lg:h-[12%] h-[8%] overflow-hidden whitespace-nowrap max-md:hidden">
+    <div id="logos" class="flex gap-x-3 w-[600px] size-full">
         <div>
-            <img src="/assets/logos/angular-logo.png" alt="angular logo">
+            <Angular />
         </div>
         <div>
-            <img src="/assets/logos/laravel-logo.svg" alt="laravel logo">
+            <Laravel />
         </div>
         <div>
-            <img src="/assets/logos/astro-logo.svg" alt="astro logo">
+            <AstroSvg />
         </div>
         <div>
-            <img src="/assets/logos/angular-logo.png" alt="angular logo">
+            <Angular />
         </div>
         <div>
-            <img src="/assets/logos/laravel-logo.svg" alt="laravel logo">
+            <Laravel />
         </div>
         <div>
-            <img src="/assets/logos/astro-logo.svg" alt="astro logo">
-        </div>
-        <div>
-            <img src="/assets/logos/angular-logo.png" alt="angular logo">
-        </div>
-        <div>
-            <img src="/assets/logos/laravel-logo.svg" alt="laravel logo">
-        </div>
-        <div>
-            <img src="/assets/logos/astro-logo.svg" alt="astro logo">
-        </div>
-        <div>
-            <img src="/assets/logos/angular-logo.png" alt="angular logo">
-        </div>
-        <div>
-            <img src="/assets/logos/laravel-logo.svg" alt="laravel logo">
-        </div>
-        <div>
-            <img src="/assets/logos/astro-logo.svg" alt="astro logo">
+            <AstroSvg />
         </div>
     </div>
 </div>
 
 <style>
-    #logos div img{
-        object-fit: contain;
-        width: 100%;
+    #logos div {
         height: 100%;
+        width: 33%;
+    }
+
+    svg{
     }
 
     #logos {
-        animation: LR 30s infinite linear;
+        animation: LR 12s infinite linear;
     }
 
     @keyframes LR {
@@ -56,7 +45,7 @@
         }
 
         100% {
-            transform: translateX(-50%);
+            transform: translateX(-51%);
         }
     }
 </style>
