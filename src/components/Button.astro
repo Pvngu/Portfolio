@@ -9,88 +9,62 @@ const { link, invertColor } = Astro.props;
 const btnStyle = invertColor ? 'inverted' : 'btn';
 ---
 
-<a class={btnStyle} target="_blank" href={link}>
+<a class=`${btnStyle} xl:text-sm xl:px-3 xl:py-1 text-xs` target="_blank" href={link}>
     <slot />
 </a>
 
 <style>
-    .btn {
-    display: flex;
-    align-items: center;
-    column-gap: .3rem;
-    color: #222222;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 2px solid #222222;
-    padding: 3% 7%;
-    font-size: clamp(8px, 1vw, 17px);
-    font-weight: bold;
-    background: transparent;
-    position: relative;
-    transition: all 1s;
-    overflow: hidden;
-    cursor: pointer;
-    white-space: nowrap;
-    }
-
-    .btn:hover {
-    color: #f2f2f2;
-    }
-
-    .btn::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    top: 0;
-    left: -40px;
-    transform: skewX(45deg);
-    background-color: #222222;
-    z-index: -1;
-    transition: all 1s;
-    }
-
-    .btn:hover::before {
-    width: 160%;
+    .btn, .inverted {
+        display: flex;
+        align-items: center;
+        column-gap: .3rem;
+        color: #222222;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 2px solid #222222;
+        font-weight: bold;
+        background: transparent;
+        position: relative;
+        transition: color 1s;
+        overflow: hidden;
+        cursor: pointer;
+        white-space: nowrap;
     }
 
     .inverted {
-    display: flex;
-    align-items: center;
-    column-gap: .3rem;
-    color: #f2f2f2;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 2px solid #222222;
-    padding: 3% 7%;
-    font-size: clamp(8px, 1vw, 17px);
-    font-weight: bold;
-    background: transparent;
-    position: relative;
-    transition: all 1s;
-    overflow: hidden;
-    cursor: pointer;
-    white-space: nowrap;
+        color: #f2f2f2;
+    }
+
+    .btn:hover {
+        color: #f2f2f2;
     }
 
     .inverted:hover {
-    color: #222222;
+        color: #222222;
+    }
+
+    .btn::before, .inverted::before {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        top: 0;
+        left: -40px;
+        transform: skewX(45deg);
+        background-color: #222222;
+        z-index: -1;
+        transition: width 1s;
     }
 
     .inverted::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 160%;
-    top: 0;
-    left: -40px;
-    transform: skewX(45deg);
-    background-color: #222222;
-    z-index: -1;
-    transition: all 1s;
+        width: 160%;
+    }
+
+    .btn:hover::before {
+        width: 160%;
     }
 
     .inverted:hover::before {
-    width: 0%;
+        width: 0%;
     }
 </style>
