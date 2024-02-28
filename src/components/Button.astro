@@ -9,7 +9,7 @@ const { link, invertColor } = Astro.props;
 const btnStyle = invertColor ? 'inverted' : 'btn';
 ---
 
-<a class=`${btnStyle} xl:text-sm xl:px-3 xl:py-1 text-xs` target="_blank" href={link}>
+<a class=`${btnStyle} xl:text-sm px-3 py-2 max-lg:py-3 text-xs` target="_blank" href={link}>
     <slot />
 </a>
 
