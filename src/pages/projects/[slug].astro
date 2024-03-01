@@ -49,7 +49,8 @@ const {Content} = await project.render();
                             </div>
                             <div>
                                 <div class="font-semibold">Technologies:</div>
-                                <div class="tech">
+                                <div class="flex items-center tech">
+                                    <img class="inline-block max-h-10 pr-1" src=`/assets/logos/${project.data.fw}`>
                                     {
                                         project.data.tech?.map(t => (
                                             <i class=`bx bxl-${t}`></i>
@@ -91,6 +92,10 @@ const {Content} = await project.render();
 
     .tech i{
         font-size: clamp(25px, 2.7vw, 50px);
+    }
+
+    .tech img {
+        width: clamp(20px, 2.7vw, 50px);
     }
 
     #right-items, p {

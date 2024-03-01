@@ -1,0 +1,27 @@
+<div>
+    <img class="absolute right-0" height="400px" width="300px" src="/assets/cooking.gif" alt="">
+    <div id="scrollTech" class="font-inter text-white-gray flex font-semibold whitespace-nowrap -translate-x-[90%]">
+        <div>Technologies I use to cook🔥Technologies I use to cook🔥Technologies I use to cook🔥Technologies I use to cook🔥Technologies I use to cook🔥Technologies I use to cook🔥Technologies I use to cook🔥</div>
+    </div>
+</div>
+
+<style>
+    #scrollTech {
+        font-size: clamp(20px, 3vw, 70px);
+    }
+</style>
+
+<script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger)
+
+    gsap.to('#scrollTech div', {
+        scrollTrigger: {
+            trigger: '#toolbox',
+            scrub: true
+        },
+        x: 300
+    })
+</script>
