@@ -3,8 +3,8 @@ import Angular from '../icons/Angular.astro';
 import Laravel from '../icons/Laravel.astro';
 import AstroSvg from '../icons/Astro.astro';
 ---
-<div class="text-3xl absolute top-0 right-0 w-[40%] translate-y-4 lg:h-[12%] h-[8%] overflow-hidden whitespace-nowrap max-md:hidden">
-    <div id="logos" class="flex gap-x-2 w-[1200px] size-full">
+<div class="text-3xl absolute top-0 right-0 w-[40%] translate-y-4 lg:h-[15%] h-[8%] overflow-hidden whitespace-nowrap max-md:hidden">
+    <div id="logos" class="flex gap-x-4 w-max size-full">
         <div>
             <Angular />
         </div>
@@ -17,7 +17,7 @@ import AstroSvg from '../icons/Astro.astro';
         <div>
             <Angular />
         </div>
-        <div>
+        <div >
             <Laravel />
         </div>
         <div>
@@ -26,7 +26,16 @@ import AstroSvg from '../icons/Astro.astro';
         <div>
             <Angular />
         </div>
+        <div >
+            <Laravel />
+        </div>
         <div>
+            <AstroSvg />
+        </div>
+        <div>
+            <Angular />
+        </div>
+        <div >
             <Laravel />
         </div>
         <div>
@@ -45,16 +54,12 @@ import AstroSvg from '../icons/Astro.astro';
     }
 
     #logos {
-        animation: LR 13s infinite linear;
+        animation: LR 12s infinite linear;
     }
 
     @keyframes LR {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(-33.9%);
+        to {
+            transform: translate(calc(-50% - 0.5rem));
         }
     }
 </style>
