@@ -11,7 +11,7 @@ const { project } = Astro.props;
 <article class="flex flex-col w-full relative">
     <picture class="max-md:rounded-2xl rounded-3xl w-full h-auto overflow-hidden relative projectPicture">
         <div class="absolute flex items-center gap-x-2 z-30 bottom-4 left-4 rounded-lg backdrop-blur-[2px] bg-white/10 tech">
-            <img class="inline-block max-h-9" src=`/assets/logos/${project.data.fw}`>
+            <img class="inline-block max-h-9" src=`/assets/logos/${project.data.fw}.svg`>
             {
                 project.data.tech?.map(t => (
                     <i class=`bx bxl-${t}`></i>

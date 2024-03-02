@@ -1,0 +1,14 @@
+---
+interface Props { className?: string }
+
+const { className } = Astro.props;
+---
+<h2 class=`font-semibold capitalize overflow-hidden font-main ${className}`>
+    <slot/>
+</h2>
+
+<style>
+    h2 {
+        font-size: clamp(40px, 3.4vw, 140px);
+    }
+</style>

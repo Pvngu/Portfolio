@@ -22,11 +22,12 @@ import Intro from '../components/Intro.astro';
 			</SectionContent>
 		</div>
 		<div class="bg-black-light w-[97.5%] m-auto rounded-3xl 2xl:px-[73px] xl:px-[60px] md:px-[45px] px-[20px] 2xl:py-[70px] py-[40px] z-10 relative overflow-hidden">
-			<section id="about">
+			<section id="about" class="h-[650px]">
 				<H1 className='text-white-gray'>About Me</H1>
 				<AboutCard />
 			</section>
-			<section class="h-[600px] relative mt-24" id="toolbox">
+			<section class="relative mt-24" id="toolbox">
+				<img class="absolute right-0 top-10" height="400px" width="300px" src="/assets/cooking.gif" alt="">
 				<H1 className='text-white-gray'>My Toolbox</H1>
 				<Toolbox />
 			</section>
