@@ -4,7 +4,7 @@
             <span>©Pvngu. All right reserved.</span>
         </div>
         <div class="capitalize">
-            <ul class="flex gap-x-3">
+            <ul class="flex max-sm:flex-col gap-y-2 gap-x-3">
                 <li>
                     <a target="_blank" href="https://discordapp.com/users/553660811361517568">
                         Discord
@@ -30,11 +30,11 @@
 
 <style>
     footer div:nth-child(2) div {
-        font-size: clamp(20px, 11.4vw, 290px)
+        font-size: clamp(20px, 11vw, 290px)
     }
 
     #top-items {
-        font-size: clamp(12px, 1.6vw, 25px);
+        font-size: clamp(14px, 1.6vw, 25px);
     }
 </style>
 
@@ -51,7 +51,7 @@
         scrollTrigger: {
             trigger: '#footerName',
             start: 'top 94%',
-            markers: false
+            markers: true
         },
         translateY: 200,
         duration: 2,

@@ -27,7 +27,7 @@ const { project } = Astro.props;
     <div class="flex justify-between items-center md:pt-2 px-2 text-black-gray">
         <a id="projectBottom" class="font-inter font-light text-2xl" href=`/projects/${project.slug}`>
             {project.data.title}
-            <i class='bx bx-arrow-back rotate-[130deg] ml-1'></i>
+            <i class='bx bx-arrow-back rotate-[130deg]'></i>
         </a>
         <div id="tags" class="uppercase flex gap-x-2">
             {
@@ -42,11 +42,11 @@ const { project } = Astro.props;
 
 <style>
     picture {
-        height: clamp(300px, 31vw, 700px);
+        height: clamp(260px, 31vw, 700px);
     }
 
     #projectBottom {
-        font-size: clamp(20px, 1.4npmvw, 40px);
+        font-size: clamp(20px, 1.4vw, 40px);
     }
 
     #tags {
