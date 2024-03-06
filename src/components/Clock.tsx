@@ -13,7 +13,7 @@ export default function Clock() {
   }, []);
 
   return (
-    <div className='absolute text-black-gray bottom-8 lg:bottom-9 right-0 opacity-90'>
+    <div className='absolute text-black-gray bottom-1 lg:bottom-2 right-0 opacity-90'>
       <span style={{fontSize: 'clamp(18px, 2vw, 40px)'}} className="font-hero tracking-wide">BC, MX  {currentTime.format('HH:mm:ss A')}</span>
     </div>
   );
