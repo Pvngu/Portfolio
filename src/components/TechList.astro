@@ -9,14 +9,14 @@ const lists = [
     {
         name: 'Backend',
         tech: ['php', 'mysql', 'laravel', 'sql-server']
-    }
+    },
 ]
 ---
 <div>
-    <div class="flex max-lg:flex-col gap-y-6 justify-center gap-x-4 2xl:gap-x-10 mt-8 xl:mt-16 2xl:px-[6%]">
+    <div class="flex max-lg:flex-col flex-wrap gap-y-6 justify-center gap-x-4 2xl:gap-x-10 mt-8 xl:mt-16 2xl:px-[6%]">
         {
-            lists.map((list) => (
-                <div class='rounded-3xl px-4 py-6 md:py-12 lg:w-full border-2 border-white-gray border-opacity-5'>
+            lists.map((list, i) => (
+                <div class=`rounded-3xl px-4 py-6 md:py-12 lg:w-[48%] border-2 border-white-gray h-fit border-opacity-5 ${i % 2 !== 0 ? 'lg:mt-80' : ''}`>
                     <H2 className='text-white-gray text-center'>{list.name}</H2>
                     <div class="flex flex-wrap justify-center gap-y-8 2xl:gap-y-20 gap-x-8 mt-8 logosContainer">
                         {
