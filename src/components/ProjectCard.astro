@@ -41,8 +41,15 @@ const { project } = Astro.props;
 
 
 <style>
+
     picture {
         height: clamp(260px, 31vw, 700px);
+    }
+
+    @media (max-width: 1024px) {
+        picture {
+            height: clamp(260px, 60vw, 700px);
+        }
     }
 
     #projectBottom {
