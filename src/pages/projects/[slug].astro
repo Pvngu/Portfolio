@@ -27,7 +27,7 @@ const {project} = Astro.props;
 const {Content} = await project.render();
 ---
 
-<Layout title='Pvngu | MyStoreSystem'>
+<Layout title=`Pvngu | ${project.data.title}``>
     <Intro />
     <main class="pt-20">
         <section class="max-md:px-4 px-10 xl:px-[10%]">
