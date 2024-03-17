@@ -46,18 +46,22 @@ const { project } = Astro.props;
         height: clamp(260px, 31vw, 700px);
     }
 
+    #tags {
+        font-size: clamp(9px, 1vw, 16px);
+    }
+
     @media (max-width: 1024px) {
         picture {
             height: clamp(260px, 60vw, 700px);
+        }
+
+        #tags {
+            font-size: clamp(9px, 1.6vw, 16px);
         }
     }
 
     #projectBottom {
         font-size: clamp(20px, 1.4vw, 40px);
-    }
-
-    #tags {
-        font-size: clamp(9px, 1vw, 16px);
     }
 
     .tech i{
