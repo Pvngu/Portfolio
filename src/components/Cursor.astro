@@ -22,9 +22,8 @@
     const hover = document.querySelectorAll('button, a, #menuToggle') as NodeListOf<HTMLElement>;
 
     window.addEventListener('mousemove', (e) => {
-        if("ontouchstart" in document.documentElement) {
-            cursor.style.display = 'none';
-        }
+    if(matchMedia('(pointer:coarse)').matches) cursor.style.display = 'none'
+    else cursor.style.display = 'block'
 
         const posX = e.clientX;
         const posY = e.clientY;
@@ -32,7 +31,6 @@
         cursor.style.left = `${posX}px`;
         cursor.style.top = `${posY}px`;
         cursor.style.opacity = '1';
-        cursor.style.display = 'block';
     });
 
     document.addEventListener("mouseleave", function(event) {
