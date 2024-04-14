@@ -20,14 +20,19 @@
     const cursor = document.querySelector('[data-cursor]') as HTMLElement;
     const text = document.querySelectorAll('p, h1, h2, span') as NodeListOf<HTMLElement>;
     const hover = document.querySelectorAll('button, a, #menuToggle') as NodeListOf<HTMLElement>;
-    
+
     window.addEventListener('mousemove', (e) => {
+        if("ontouchstart" in document.documentElement) {
+            cursor.style.display = 'none';
+        }
+
         const posX = e.clientX;
         const posY = e.clientY;
 
         cursor.style.left = `${posX}px`;
         cursor.style.top = `${posY}px`;
         cursor.style.opacity = '1';
+        cursor.style.display = 'block';
     });
 
     document.addEventListener("mouseleave", function(event) {
