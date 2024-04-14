@@ -3,6 +3,7 @@ import Footer from '../components/Footer.astro';
 import NavbarMobile from '../components/NavbarMobile.astro';
 import Navbar from '../components/Navbar.astro';
 import Header from '../components/Header.astro';
+import Cursor from '../components/Cursor.astro';
 
 interface Props {
 	title: string;
@@ -30,6 +31,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="bg-cream-white" id="body">
+		<Cursor/>
 		<NavbarMobile/>
 		<Navbar/>
 		<Header />
@@ -40,7 +42,7 @@ const { title } = Astro.props;
 
 <script>
 	import Lenis from '@studio-freight/lenis'
-	
+
 	const lenis = new Lenis()
 
 	function raf(time: any) {
@@ -48,26 +50,37 @@ const { title } = Astro.props;
 		requestAnimationFrame(raf)
 	}
 	requestAnimationFrame(raf)
+	
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	anchor.addEventListener('click', function (e) {
+		e.preventDefault();
+		lenis.scrollTo(this.getAttribute('href'))
+	});
+	})
 </script>
 
 <style is:global>
 	html.lenis {
-  height: auto;
-}
+	height: auto;
+	}
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
+	.lenis.lenis-smooth {
+	scroll-behavior: auto !important;
+	}
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
+	.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+	}
 
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
+	.lenis.lenis-stopped {
+	overflow: hidden;
+	}
 
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
+	.lenis.lenis-scrolling iframe {
+	pointer-events: none;
+	}
+
+	body, a, button, h1, h2, h3, p, label {
+		cursor: none;
+	}
 </style>

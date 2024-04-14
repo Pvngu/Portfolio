@@ -40,15 +40,15 @@ const {Content} = await project.render();
                         <p class="text-justify">{project.data.description}</p>
                     </div>
                 </div>
-                <div class="flex justify-between text-black-gray">
+                <div class="flex justify-between text-black-gray items-center">
                     <div class="flex flex-col justify-end lg:gap-y-6 gap-y-4">
                         <div id="right-items" class="flex gap-x-6 lg:justify-end">
                             <div>
-                                <div class="font-bold">Date:</div>
-                                <div>{project.data.date}</div>
+                                <span class="font-bold block">Date:</span>
+                                <span class="block">{project.data.date}</span>
                             </div>
                             <div>
-                                <div class="font-semibold">Technologies:</div>
+                                <span class="font-semibold block">Technologies:</span>
                                 <div class="flex items-center tech">
                                     <img class="inline-block max-h-10 pr-1" src=`/assets/logos/${project.data.fw}.svg`>
                                     {

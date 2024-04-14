@@ -6,7 +6,7 @@ interface Props {
 const { className } = Astro.props
 ---
 
-<h1 class=`uppercase font-bold overflow-hidden font-main ${className} h1`>
+<h1 class={`uppercase font-bold overflow-hidden font-main w-fit ${className} h1`}>
     <slot/>
 </h1>
 

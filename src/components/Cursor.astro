@@ -1,0 +1,58 @@
+<div class="cursor" data-cursor></div>
+
+<style is:global>
+    .cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 45px;
+        pointer-events: none;
+        background-image: url('/assets/cursors/default.svg');
+        background-repeat: no-repeat;
+        transform: translate(-12px, -3px);
+        z-index: 9999;
+        opacity: 0;
+    }
+</style>
+
+<script>
+    const cursor = document.querySelector('[data-cursor]') as HTMLElement;
+    const text = document.querySelectorAll('p, h1, h2, span') as NodeListOf<HTMLElement>;
+    const hover = document.querySelectorAll('button, a, #menuToggle') as NodeListOf<HTMLElement>;
+    
+    window.addEventListener('mousemove', (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        cursor.style.left = `${posX}px`;
+        cursor.style.top = `${posY}px`;
+        cursor.style.opacity = '1';
+    });
+
+    document.addEventListener("mouseleave", function(event) {
+        cursor.style.opacity = '0';
+});
+
+    hover.forEach((e) => {
+        e.addEventListener('mousemove', () => {
+            cursor.style.backgroundImage = 'url(/assets/cursors/hover.svg)';
+            cursor.style.transform = 'translate(-14px, -3px)';
+        });
+        e.addEventListener('mouseleave', () => {
+            cursor.style.backgroundImage = 'url(/assets/cursors/default.svg)';
+            cursor.style.transform = 'translate(-12px, -3px)';
+        });
+    });
+
+    text.forEach((e) => {
+        e.addEventListener('mousemove', () => {
+            cursor.style.backgroundImage = 'url(/assets/cursors/text.svg)';
+            cursor.style.transform = 'translate(-15px, -15px)';
+        });
+        e.addEventListener('mouseleave', () => {
+            cursor.style.backgroundImage = 'url(/assets/cursors/default.svg)';
+            cursor.style.transform = 'translate(-12px, -3px)';
+        });
+    })
+</script>

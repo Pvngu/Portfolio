@@ -1,12 +1,15 @@
+---
+const currentPath = Astro.url.pathname;
+---
 <div class="w-full flex justify-center max-md:hidden">
     <header id="navbar" class="bottom-0 fixed z-50 translate-y-0">
         <nav class="flex items-center justify-between my-4 rounded-2xl md:border-[1px] border-black-gray border-opacity-20 gap-x-8 md:py-1 xl:py-2 md:px-6 xl:px-10 md:backdrop-blur md:text-md xl:text-xl text-cream-white bg-black/30">
             <a href="/" class="size-[50px] hover:scale-105 transition-all">
                 <img src="/../assets/logos/Pingu-logo.png" alt="logo">
             </a>
-            <a class="max-md:hidden opacity-80 hover:opacity-100" href="/#home">Home</a>
-            <a class="max-md:hidden opacity-80 hover:opacity-100" href="/#about">About</a>
-            <a class="max-md:hidden opacity-80 hover:opacity-100" href="/#projects">Projects</a>
+            <a class="max-md:hidden opacity-80 hover:opacity-100" href={`${currentPath !== '/' ? '/' : ''}#home`} >Home</a>
+            <a class="max-md:hidden opacity-80 hover:opacity-100" href={`${currentPath !== '/' ? '/' : ''}#about`}>About</a>
+            <a class="max-md:hidden opacity-80 hover:opacity-100" href={`${currentPath !== '/' ? '/' : ''}#projects`}>Projects</a>
             <a class="max-md:hidden opacity-80 hover:opacity-100" href="mailto:omar151102@hotmail.com">Contact</a>
         </nav>
     </header>
