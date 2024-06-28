@@ -44,13 +44,15 @@ import Clock from '../components/Clock.tsx';
 
     gsap.to('#hero', {
         scrollTrigger: {
-            trigger: '#about',
-            start: 'top 95%',
+            trigger: '#black-container',
+            start: 'top 100%',
             end: 'top 35%',
             scrub: true,
             markers: false
         },
-        opacity: 0,
-        translateY: -80
+        opacity: .75,
+        translateY: 60,
+        scale: .9,
+        display: 'none'
     }) 
 </script>

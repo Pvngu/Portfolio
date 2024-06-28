@@ -21,23 +21,20 @@ import Intro from '../components/Intro.astro';
 				<Hero />
 			</SectionContent>
 		</div>
-		<div class="bg-black-light w-[97.5%] m-auto rounded-3xl 2xl:px-[73px] xl:px-[60px] md:px-[45px] px-[20px] 2xl:py-[70px] py-[40px] z-10 relative overflow-hidden">
-			<section id="about" class="max-w-[1720px] mx-auto">
+		<div id="black-container" class="bg-black-light w-full m-auto rounded-3xl 2xl:px-[73px] xl:px-[60px] md:px-[45px] px-[20px] 2xl:py-[70px] py-[40px] z-10 relative overflow-hidden">
+			<section id="about" class="max-w-[1720px] mx-auto md:mt-14">
 				<H1 className='text-white-gray'>About Me</H1>
 				<AboutCard />
 			</section>
-			<section class="relative 2xl:mt-24 mt-8 max-w-[1720px] mx-auto" id="toolbox">
-				<img class=" max-2xl:hidden absolute right-0 top-10" height="400px" width="300px" src="/assets/cooking.gif" alt="">
+			<section class="relative 2xl:mt-24 mt-20 max-w-[1720px] mx-auto" id="toolbox">
+				<img class=" max-lg:hidden absolute right-0 top-10" height="400px" width="300px" src="/assets/cooking.gif" alt="">
 				<H1 className='text-white-gray'>My Toolbox</H1>
 				<Toolbox />
 			</section>
 		</div>
 		<SectionContent id='projects' className='text-black-gray'>
-			<div class="max-w-[1720px] mx-auto">
-				<HeadingDescription 
-				title='Projects',
-				description="Showcase of my “big projects” that I've been working on over the past 3 months using different technologies."
-				/>
+			<div class="max-w-[1720px] mx-auto my-6 md:my-14">
+				<H1 className='pb-5'>Projects</H1>
 				<ScrollingLogos />
 				<Project />
 			</div>

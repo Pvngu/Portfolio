@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard.astro";
 
 const projects = await getCollection('projects'); 
 ---
-<div class="my-8 flex gap-x-3 2xl:gap-x-5 gap-y-4 max-lg:flex-col">
+<div class="md:my-8 flex gap-x-3 2xl:gap-x-5 gap-y-4 max-lg:flex-col">
     {
         projects.map(project => (
             <ProjectCard project={project} />

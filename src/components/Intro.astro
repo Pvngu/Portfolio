@@ -1,5 +1,5 @@
 <div id="intro" class="h-svh w-full left-0 top-0 bg-cream-white fixed z-[500] flex justify-center items-center font-hero text-[200px] duration-1000 overflow-hidden overflow-y-scroll">
-    <img id="logo" class="duration-1000 w-40 scale-75 opacity-50 rotate-6" src="/assets/logos/Pingu-logo.png" alt="">
+    <img id="logo" class="duration-1000 scale-75 opacity-50 rotate-6" src="/assets/logos/Pingu-logo.png" alt="">
 </div>
 
 <script>
@@ -17,3 +17,9 @@
         }, 1000);
     })
 </script>
+
+<style>
+    #intro img {
+        width: clamp(80px, 14vw, 160px);
+    }
+</style>
